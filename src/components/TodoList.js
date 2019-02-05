@@ -1,5 +1,5 @@
 import React from 'react';
-import ToDoForm from '../components/ToDoform';
+import ToDoForm from './TodoForm';
 import { connect } from 'react-redux';
 import {addTodo} from '../actions/todos';
 import ToDoListItem from '../components/ToDoListItem';

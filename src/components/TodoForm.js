@@ -4,9 +4,9 @@ import { SingleDatePicker } from 'react-dates';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import { connect } from 'react-redux';
-import TagPicker from '../components/TagPicker';
+import TagPicker from './TagPicker';
 
-class ToDoForm extends React.Component {
+class TodoForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -102,4 +102,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ToDoForm);
+export default connect(mapStateToProps)(TodoForm);
