@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import {addTag} from './actions/tags';
+<<<<<<< HEAD
 import {addTodo} from './actions/todos';
+=======
+>>>>>>> 2602189bfaaa08160f82bccf1d9b4ba7dc6be27b
 import AppRouter from './routers/AppRouter';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2602189bfaaa08160f82bccf1d9b4ba7dc6be27b
 const store = configureStore();
 
 store.subscribe(() => {
@@ -18,7 +24,10 @@ store.subscribe(() => {
   console.log("tags", state.tags)
 });
 
+<<<<<<< HEAD
 store.dispatch(addTodo({description: "test"}))
+=======
+>>>>>>> 2602189bfaaa08160f82bccf1d9b4ba7dc6be27b
 store.dispatch(addTag({description: "tag", color: "blue"}));
 store.dispatch(addTag({description: "tag2", color: "red"}));
 
