@@ -6,6 +6,7 @@ import TodoList from '../components/TodoList';
 import HelpPage from '../components/Help';
 import NotFoundPage from '../components/NotFoundPage';
 import NewTagForm from '../components/NewTagForm';
+import EditTodoForm  from '../components/EditToDoForm';
 const routes = () => (
   <BrowserRouter>
     <div>
@@ -15,6 +16,7 @@ const routes = () => (
       <Route path="/todos" component={TodoList} />
       <Route path="/tags" component={NewTagForm} />
       <Route path="/help" component={HelpPage} />
+      <Route path="/edit/:id" component={EditTodoForm}/>
       <Route component={NotFoundPage} />
       </Switch>
     </div>

@@ -7,27 +7,34 @@ const inputStyle = {
   margin: 0,
   padding: 0,
   width: '3em',
-  overflow: 'auto',
   display: 'inline-block'
 }
 
+const isChecked = (currentTags, alteredTag) => {
+  for(let i = 0; i < currentTags.length; i++){
+    if (currentTags[i].description === alteredTag.description){
+      return currentTags[i].isChecked
+    }
+  }
+}
+
 const TagPicker = (props) => (
-  <div className="btn-group">
-    <button type="button" className="btn btn-primary">Action</button>
-    <button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span className="sr-only">Toggle Dropdown</span>
-    </button>
-    <div className="dropdown-menu">
-      {props.existingTags.map((tag) => (
+  <div className="dropdown" style={{display: 'inline-block'}}>
+  <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categories
+  </button>
+  <div className="dropdown-menu">
+      {props.existingTags.map((tag) =>{
+      return (
         <div key={tag.description}>
-          <input type="checkbox" value={JSON.stringify(tag)} onChange={props.addTag}/> <p style={inputStyle}>{tag.description} </p><Tag color={tag.color} />
+          <input type="checkbox" checked={isChecked(props.currentTags, tag)} value={JSON.stringify(tag)} onChange={props.addTag}/> <p style={inputStyle}>{tag.description} </p><Tag color={tag.color} />
         </div>
-      ))}
-      <button type="button">
+      )})}
+      <button type="button">  
         <NavLink to="/tags">Add New Tag</NavLink>
       </button>
     </div>
-  </div>
+</div>
 )
 
 const mapStateToProps = (state) => {

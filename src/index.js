@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import {addTag} from './actions/tags';
-import {addTodo} from './actions/todos';
 import AppRouter from './routers/AppRouter';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -17,7 +16,6 @@ store.subscribe(() => {
   console.log("tags", state.tags)
 });
 
-store.dispatch(addTodo({description: "test"}))
 store.dispatch(addTag({description: "tag", color: "blue"}));
 store.dispatch(addTag({description: "tag2", color: "red"}));
 

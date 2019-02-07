@@ -18,7 +18,7 @@ export const addTodo = (
   }
 });
 
-export const editTodo = ({id, updates} = {}) => ({
+export const editTodo = (id, updates) => ({
   type: 'EDIT_TODO',
   id,
   updates
