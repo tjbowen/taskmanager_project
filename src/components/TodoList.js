@@ -1,5 +1,5 @@
 import React from 'react';
-import ToDoForm from '../components/ToDoform';
+import ToDoForm from './TodoForm';
 import { connect } from 'react-redux';
 import {addTodo} from '../actions/todos';
 import ToDoListItem from '../components/ToDoListItem';
@@ -13,8 +13,8 @@ const TodoList = (props) => (
     onSubmit ={(todo)=> {props.dispatch(addTodo(todo))}}
     />
     {props.todos.map((todo) => (
-      <div>
-      <ToDoListItem key={todo.id} {...todo}/>
+      <div key = {todo.id}>
+      <ToDoListItem {...todo}/>
       </div>
     ))}
   </div>

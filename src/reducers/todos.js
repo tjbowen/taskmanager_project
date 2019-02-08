@@ -16,9 +16,8 @@ export default (state = defaultReducerState, action) => {
             ...todo,
             ...action.updates
           }}else{
-            return{
-              ...todo
-            }
+            return todo;
+            
           }});
     case 'DELETE_TODO':
           return state.filter(({id}) => id !== action.id)

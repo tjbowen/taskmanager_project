@@ -4,10 +4,9 @@ import { SingleDatePicker } from 'react-dates';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import { connect } from 'react-redux';
-import TagPicker from '../components/TagPicker';
+import TagPicker from './TagPicker';
 
-class ToDoForm extends React.Component {
-
+class TodoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +14,7 @@ class ToDoForm extends React.Component {
       note: props.todo ? props.todo.note : '',
       dueDate: props.todo ? moment(props.todo.dueDate) : undefined,
       errorState: '',
-      selectedTags: props.tags ? props.tags : [],
+      selectedTags: props.todo ? props.todo.tags : props.existingTags,
       calendarFocused: false,
     }
   };
@@ -38,7 +37,8 @@ class ToDoForm extends React.Component {
     const isChecked = e.target.checked;
     newTag = { ...newTag, isChecked }
     const newSelectedTags = this.state.selectedTags.filter((tag) => { return tag.description !== newTag.description });
-    this.setState(() => ({ selectedTags: [...newSelectedTags, newTag] }))
+    const newState = [...newSelectedTags, newTag]
+    this.setState(() => ({ selectedTags: newState.sort() }))
   };
   onSubmit = (e) => {
     e.preventDefault();
@@ -73,7 +73,7 @@ class ToDoForm extends React.Component {
             value={this.state.description}
             onChange={this.onDescriptionChange}
           />
-          <TagPicker addTag={this.addTag} />
+          <TagPicker addTag={this.addTag} currentTags={this.state.selectedTags}/>
           <SingleDatePicker
             date={this.state.dueDate}
             onDateChange={this.onDateChange}
@@ -102,4 +102,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ToDoForm);
+export default connect(mapStateToProps)(TodoForm);
