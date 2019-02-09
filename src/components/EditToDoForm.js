@@ -1,12 +1,11 @@
 import React from 'react';
 import TodoForm from './TodoForm';
 import {connect} from 'react-redux';
-import {editTodo, deleteTodo} from '../actions/todos';
+import {editTodo} from '../actions/todos';
 
 const EditTodoPage = (props) => (
  
 <div>
-{console.log(props.todo)}
 <TodoForm 
  todo = {props.todo}
  buttonText= "Save Changes"

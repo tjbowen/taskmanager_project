@@ -7,6 +7,15 @@ export default (state = defaultReducerState, action) => {
         ...state,
         action.tag
       ];
+      case 'EDIT_TAG':
+        return state.map((tag) => {
+          if(tag.id === action.id){
+            return {
+            ...tag,
+            ...action.updates
+          }}else{
+            return tag; 
+          }});
       case 'DELETE_TAG':
         return[
           state.filter(({description}) => description !== action.description)

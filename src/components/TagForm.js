@@ -1,6 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {addTag} from '../actions/tags';
 
 class NewTagForm extends React.Component{
   constructor(props){
@@ -28,8 +26,7 @@ class NewTagForm extends React.Component{
       this.setState(() => ({errorState: "Please set a description and color for your new tag."}));
     }else{
       this.setState(() => ({errorState: ''}));
-      this.props.dispatch(addTag({description: this.state.description, color: this.state.color}))
-      this.props.history.push('/todos');
+      this.props.onSubmit({description: this.state.description, color: this.state.color});
     }
   }
 
@@ -48,7 +45,7 @@ class NewTagForm extends React.Component{
           value= {this.state.color}
           onChange= {this.onColorChange}
         />
-        <button>Add Tag</button>
+        <button>{this.props.buttonText}</button>
       </form>
     </div>)
   }
@@ -56,4 +53,4 @@ class NewTagForm extends React.Component{
 
 
 
-export default connect()(NewTagForm);
+export default(NewTagForm);

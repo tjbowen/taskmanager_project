@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Tag from '../components/Tag';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 
 const inputStyle = {
   margin: 0,
@@ -27,7 +27,9 @@ const TagPicker = (props) => (
       {props.existingTags.map((tag) =>{
       return (
         <div key={tag.description}>
-          <input type="checkbox" checked={isChecked(props.currentTags, tag)} value={JSON.stringify(tag)} onChange={props.addTag}/> <p style={inputStyle}>{tag.description} </p><Tag color={tag.color} />
+          <input type="checkbox" checked={isChecked(props.currentTags, tag)} value={JSON.stringify(tag)} onChange={props.addTag}/> <p style={inputStyle}>
+          <Link to={`/edit/tag/${tag.id}`}>{tag.description} </Link></p>
+          <Tag id={tag.id} />
         </div>
       )})}
       <button type="button">  

@@ -5,8 +5,10 @@ import HomePage from '../components/Homepage';
 import TodoList from '../components/TodoList';
 import HelpPage from '../components/Help';
 import NotFoundPage from '../components/NotFoundPage';
-import NewTagForm from '../components/NewTagForm';
+import AddTagPage from '../components/AddTagPage';
 import EditTodoForm  from '../components/EditToDoForm';
+import EditTagPage from '../components/EditTagPage';
+
 const routes = () => (
   <BrowserRouter>
     <div>
@@ -14,8 +16,9 @@ const routes = () => (
       <Switch>
       <Route path="/" component={HomePage} exact={true} />
       <Route path="/todos" component={TodoList} />
-      <Route path="/tags" component={NewTagForm} />
+      <Route path="/tags" component={AddTagPage} />
       <Route path="/help" component={HelpPage} />
+      <Route path ="/edit/tag/:id" component={EditTagPage} />
       <Route path="/edit/:id" component={EditTodoForm}/>
       <Route component={NotFoundPage} />
       </Switch>

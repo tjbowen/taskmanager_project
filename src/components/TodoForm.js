@@ -56,7 +56,7 @@ class TodoForm extends React.Component {
         description: '',
         note: '',
         dueDate: undefined,
-        tags: []
+        selectedTags: []
       }))
     };
 

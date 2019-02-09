@@ -12,12 +12,12 @@ const ToDoListItem = (props) => (
   <div>
     <Link to={`/edit/${props.id}`}>
       <h3 style={{display:'inline-block'}}>{props.description}</h3> </Link>
-      <h3 style={{display:'inline-block'}}>- Due Date: {moment(props.dueDate).format('DD/MM/YY')} <span onClick={() => { props.dispatch(deleteTodo({ id: props.id })) }}>
+      <h3 style={{display:'inline-block'}}>- Due Date: {moment(props.dueDate).format('DD/MM/YY')} 
         {props.tags.map((tag) => {
           if (tag.isChecked === true) {
-            return (<Tag color={tag.color} />)
+            return (<Tag id={tag.id} />)
           }
-        })}<FontAwesomeIcon icon={faWindowClose} /></span></h3>
+        })}<span onClick={() => { props.dispatch(deleteTodo({ id: props.id })) }}><FontAwesomeIcon icon={faWindowClose} /></span></h3>
       
    
     <p>{props.note}</p>
