@@ -1,11 +1,13 @@
 import uuid from 'uuid';
+import moment from 'moment';
 
 export const addTodo = (
   {
     description = "",
     note = '',
     dueDate = 0,
-    tags = []
+    tags = [],
+    createDate = moment()
   } ={}
 ) => ({
   type: 'ADD_TODO',
