@@ -2,22 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-import {addTag} from './actions/tags';
 import AppRouter from './routers/AppRouter';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
 
-store.subscribe(() => {
-  const state = store.getState();
-  console.log("Todos", state.todos);
-  console.log("Filters", state.filters);
-  console.log("tags", state.tags)
-});
-
-store.dispatch(addTag({description: "tag", color: "blue"}));
-store.dispatch(addTag({description: "tag2", color: "red"}));
 
 const jsx = (
   <Provider store={store}>

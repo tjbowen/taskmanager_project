@@ -18,6 +18,12 @@ class TodoForm extends React.Component {
       calendarFocused: false,
     }
   };
+
+  handleChange = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState(() => ({[name] : value}))
+  }
   onDescriptionChange = (e) => {
     const description = e.target.value
     this.setState(() => ({ description }));
@@ -71,7 +77,8 @@ class TodoForm extends React.Component {
             type="text"
             placeholder="To-Do Item"
             value={this.state.description}
-            onChange={this.onDescriptionChange}
+            onChange={this.handleChange}
+            name="description"
           />
           <TagPicker addTag={this.addTag} currentTags={this.state.selectedTags}/>
           <SingleDatePicker
@@ -86,7 +93,8 @@ class TodoForm extends React.Component {
             style={{ display: 'block' }}
             placeholder="Add an optional note"
             value={this.state.note}
-            onChange={this.onNoteChange}
+            onChange={this.handleChange}
+            name="note"
           >
           </textarea>
           <button>{this.props.buttonText}</button>

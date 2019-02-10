@@ -11,7 +11,6 @@ class Tag extends React.Component {
     }
   }
   render() {
-    console.log("state", this.state)
     return (
       <div style={{ display: "inline-block" }} className="px-1">
         <FontAwesomeIcon icon={faBookmark} color={this.state.tag.color} />

@@ -15,7 +15,7 @@ const ToDoListItem = (props) => (
       <h3 style={{display:'inline-block'}}>- Due Date: {moment(props.dueDate).format('DD/MM/YY')} 
         {props.tags.map((tag) => {
           if (tag.isChecked === true) {
-            return (<Tag id={tag.id} />)
+            return (<Tag id={tag.id} key={tag.id}/>)
           }
         })}<span onClick={() => { props.dispatch(deleteTodo({ id: props.id })) }}><FontAwesomeIcon icon={faWindowClose} /></span></h3>
       
