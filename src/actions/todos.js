@@ -1,4 +1,6 @@
+import React from 'react';
 import uuid from 'uuid';
+import PropTypes from 'prop-types'
 
 export const addTodo = (
   {
@@ -28,3 +30,19 @@ export const deleteTodo = ({id} = {}) => ({
   type: 'DELETE_TODO',
   id
 })
+const Todo = ({ onClick, completed, text }) => (
+  <li
+    onClick={onClick}
+    style={{
+      textDecoration: completed ? 'line-through' : 'none'
+    }}
+  >
+    {text}
+  </li>
+)
+
+Todo.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired
+}
