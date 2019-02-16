@@ -39,9 +39,11 @@ const TagPicker = (props) => (
           </div>
         </div>
       )})}
-      <button type="button">  
+      <div className="d-flex justify-content-center">
+      <button type="button" className="text-center">  
         <NavLink to="/tags">Add New Tag</NavLink>
       </button>
+      </div>
     </div>
 </div>
 )
