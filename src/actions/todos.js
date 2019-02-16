@@ -16,7 +16,8 @@ export const addTodo = (
     description,
     note,
     dueDate,
-    tags
+    tags,
+    createDate
   }
 });
 

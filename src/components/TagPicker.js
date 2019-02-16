@@ -19,24 +19,22 @@ const isChecked = (currentTags, alteredTag) => {
 }
 
 const dropMenuStyle = {
-  width: 'auto',
+  display: 'inline-block',
+  whiteSpace : 'nowrap'
 }
-
-
-
 
 const TagPicker = (props) => (
   <div className="dropdown" style={{display: 'inline-block'}}>
   <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Categories
   </button>
-  <div className="dropdown-menu" style={{padding: '20px'}} >
+  <div className="dropdown-menu">
       {props.existingTags.map((tag) =>{
       return (
-        <div key={tag.description} style={dropMenuStyle}>
-        <div style={{width: 'auto'}}>
-          <input type="checkbox" checked={isChecked(props.currentTags, tag)} value={JSON.stringify(tag)} onChange={props.addTag}/> <p style={inputStyle}>
-          <Link to={`/edit/tag/${tag.id}`}>{tag.description} </Link></p>
+        <div key={tag.description}>
+        <div style = {dropMenuStyle}>
+          <input type="checkbox" checked={isChecked(props.currentTags, tag)} value={JSON.stringify(tag)} onChange={props.addTag}/>
+          <Link to={`/edit/tag/${tag.id}`}>{tag.description} </Link>  
           <Tag id={tag.id} />
           </div>
         </div>
