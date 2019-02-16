@@ -9,7 +9,7 @@ const AddTag =  (props) => (
     <TagForm 
     onSubmit={(tag) => {
       props.dispatch(addTag(tag));
-      props.history.push('/todos');
+      props.history.goBack();
     }} 
     buttonText="Add Tag"
     />
