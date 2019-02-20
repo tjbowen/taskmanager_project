@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {addTodo} from '../actions/todos';
 import ToDoListItem from '../components/ToDoListItem';
 import PropTypes from 'prop-types';
+import{ Todo } from '../actions/todos';
 
 
 
@@ -27,7 +28,7 @@ const mapStateToProps = (state) => {
     todos: state.todos
   };
 };
-const TodoList = ({ todos, toggleTodo }) => (
+const todolist = ({ todos, toggleTodo }) => (
   <ul>
     {todos.map(todo => (
       <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
@@ -35,7 +36,7 @@ const TodoList = ({ todos, toggleTodo }) => (
   </ul>
 )
 
-TodoList.propTypes = {
+todolist.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

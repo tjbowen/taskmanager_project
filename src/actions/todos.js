@@ -1,6 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 export const addTodo = (
   {
@@ -30,7 +30,8 @@ export const deleteTodo = ({id} = {}) => ({
   type: 'DELETE_TODO',
   id
 })
-const Todo = ({ onClick, completed, text }) => (
+
+export const Todo = ({ onClick, completed, text }) => (
   <li
     onClick={onClick}
     style={{
