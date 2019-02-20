@@ -35,6 +35,11 @@ export const deleteTodo = ({id} = {}) => ({
   id
 })
 
+export const toggleTodo = id => ({
+    type: 'TOGGLE_TODO',
+    id: id
+})
+
 export const Todo = ({ onClick, completed, text }) => (
   <li
     onClick={onClick}

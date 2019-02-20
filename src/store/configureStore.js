@@ -10,6 +10,6 @@ export default () => {
       todos: todoReducer,
       tags: tagReducer
     })
-    );
-    return store;
+  );
+  return store;
 };

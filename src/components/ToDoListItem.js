@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import Tag from '../components/Tag';
 
-
-
 const ToDoListItem = (props) => (
   <div>
     <Link to={`/edit/${props.id}`}>
