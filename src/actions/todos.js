@@ -1,13 +1,16 @@
 import React from 'react';
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
+import moment from 'moment';
+
 
 export const addTodo = (
   {
     description = "",
     note = '',
     dueDate = 0,
-    tags = []
+    tags = [],
+    createDate = moment()
   } ={}
 ) => ({
   type: 'ADD_TODO',
@@ -16,7 +19,8 @@ export const addTodo = (
     description,
     note,
     dueDate,
-    tags
+    tags,
+    createDate
   }
 });
 

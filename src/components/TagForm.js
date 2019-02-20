@@ -13,15 +13,16 @@ class NewTagForm extends React.Component {
 
   onDescriptionChange = (e) => {
     const description = e.target.value
+    if(description.length < 30){
     this.setState(() => ({ description }))
-  };
+  }};
   onColorChange = (colour, e) => {
     this.setState(() => ({ color: colour.hex }))
   };
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (!this.state.description || !this.state.color) {
+    if (!this.state.description.trim() || !this.state.color) {
       this.setState(() => ({ errorState: "Please set a description and color for your new tag." }));
     } else {
       this.setState(() => ({ errorState: '' }));
