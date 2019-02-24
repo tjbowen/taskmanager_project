@@ -19,6 +19,8 @@ class TodoForm extends React.Component {
     }
   };
 
+  
+
   handleChange = e => {
     const name = e.target.name;
     const value = e.target.value;
@@ -65,6 +67,22 @@ class TodoForm extends React.Component {
         selectedTags: []
       }))
     };
+  };
+
+  componentDidMount(){
+    this.callBackendExpress()
+    .then(res => console.log(res.express))
+    .catch(err => console.log(err))
+  };
+
+  callBackendExpress = async () => {
+    const response = await fetch('/express_backend');
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error(body.message) 
+    }
+    return body;
 
   };
 
