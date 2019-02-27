@@ -5,8 +5,10 @@ import configureStore from './store/configureStore';
 import AppRouter from './routers/AppRouter';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import { applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-const store = configureStore();
+const store = configureStore(applyMiddleware(thunk));
 
 
 const jsx = (

@@ -5,6 +5,8 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import { connect } from 'react-redux';
 import TagPicker from './TagPicker';
+import { fetchTodos } from '../actions/todos';
+
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -19,7 +21,9 @@ class TodoForm extends React.Component {
     }
   };
 
-  
+  componentDidMount(){
+    this.props.fetchTodos();
+  };
 
   handleChange = e => {
     const name = e.target.name;
@@ -69,24 +73,11 @@ class TodoForm extends React.Component {
     };
   };
 
-  componentDidMount(){
-    this.callBackendExpress()
-    .then(res => console.log(res.express))
-    .catch(err => console.log(err))
-  };
-
-  callBackendExpress = async () => {
-    const response = await fetch('/express_backend');
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message) 
-    }
-    return body;
-
-  };
+  
 
   render() {
+    // const fetchedData = this.props.fetchedTodos.data;
+    // console.log(fetchedData);
     return (
       <div>
         {this.state.errorState && <p>{this.state.errorState}</p>}
@@ -124,8 +115,9 @@ class TodoForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    existingTags: state.tags
+    existingTags: state.tags,
+    fetchedTodos: state.fetch
   };
 };
 
-export default connect(mapStateToProps)(TodoForm);
+export default connect(mapStateToProps, { fetchTodos })(TodoForm);

@@ -2,7 +2,7 @@ import React from 'react';
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-
+import testapi from '../apis/testapi';
 
 export const addTodo = (
   {
@@ -56,3 +56,11 @@ Todo.propTypes = {
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 }
+
+// first attempt at fetch action creator
+export const fetchTodos = () => {
+  return async (dispatch) => {
+    const response = await testapi.get('/express_backend');
+    dispatch({ type: 'FETCH_TODOS', payload: response })
+  
+}}
