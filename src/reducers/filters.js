@@ -31,12 +31,12 @@ export default (state = filtersReducerDefaultState, action) => {
     case 'SORT_BY_ASCENDING':
       return {
         ...state,
-        ascending: true
+        ascending: 1
       }
     case 'SORT_BY_DESCENDING':
       return{
         ...state,
-        ascending: false
+        ascending: -1
       }
     case 'SET_START_DATE':
     return {

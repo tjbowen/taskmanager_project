@@ -5,6 +5,7 @@ import {addTodo} from '../actions/todos';
 import ToDoListItem from '../components/ToDoListItem';
 import PropTypes from 'prop-types';
 import{ Todo } from '../actions/todos';
+import filterTodos from '../selectors/todos'
 
 
 
@@ -15,6 +16,7 @@ const TodoList = (props) => (
     buttonText = "Add Todo"
     onSubmit ={(todo)=> {props.dispatch(addTodo(todo))}}
     />
+    
     {props.todos.map((todo) => (
       <div key = {todo.id}>
       <ToDoListItem {...todo}/>
@@ -25,7 +27,7 @@ const TodoList = (props) => (
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos
+    todos: filterTodos(state.todos, state.filters)
   };
 };
 const todolist = ({ todos, toggleTodo }) => (
