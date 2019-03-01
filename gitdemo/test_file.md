@@ -5,3 +5,5 @@ Gatlin: Gatlin's power is raising
 Gatlin: And now for memes
 
 Gatlin: ZA WORLDO!! TOKI WO TOMARE!!!!
+
+Gatlin: Iggy sucks
