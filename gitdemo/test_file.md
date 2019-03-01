@@ -1,1 +1,1 @@
-tristan = function(drugs)
+tristan = function()
