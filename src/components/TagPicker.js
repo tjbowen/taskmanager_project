@@ -3,12 +3,6 @@ import { connect } from 'react-redux';
 import Tag from '../components/Tag';
 import { NavLink, Link } from 'react-router-dom';
 
-const inputStyle = {
-  margin: 0,
-  padding: 0,
-  width: 'auto',
-  display: 'inline-block'
-}
 
 const isChecked = (currentTags, alteredTag) => {
   for (let i = 0; i < currentTags.length; i++) {

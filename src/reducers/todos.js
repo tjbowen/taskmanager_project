@@ -21,6 +21,12 @@ export default (state = defaultReducerState, action) => {
           }});
     case 'DELETE_TODO':
           return state.filter(({id}) => id !== action.id)
+    case 'TOGGLE_TODO':
+          return state.map(
+            todo => todo.id === action.id ? 
+                    {...todo, completed: !todo.completed}:
+                    todo
+          )      
     default:
       return state;
 
