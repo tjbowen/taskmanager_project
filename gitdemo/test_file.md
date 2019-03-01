@@ -1,6 +1,6 @@
 Gatlin: Gatlin is powering up for an evil merge
 
-Gatlin: Gatlin's power is raising 
+Gatlin: Kono Dio da!
 
 Gatlin: And now for memes
 
