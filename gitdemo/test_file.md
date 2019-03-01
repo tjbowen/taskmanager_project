@@ -1,7 +1,7 @@
-Gatlin is powering up for an evil merge
+Gatlin: Gatlin is powering up for an evil merge
 
-Gatlin's power is raising 
+Gatlin: Gatlin's power is raising 
 
-And now for memes
+Gatlin: And now for memes
 
-ZA WORLDO!! TOKI WO TOMARE!!!!
+Gatlin: ZA WORLDO!! TOKI WO TOMARE!!!!
