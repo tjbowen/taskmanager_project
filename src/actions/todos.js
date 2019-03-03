@@ -60,7 +60,10 @@ Todo.propTypes = {
 // first attempt at fetch action creator
 export const fetchTodos = () => {
   return async (dispatch) => {
-    const response = await testapi.get('/express_backend');
-    dispatch({ type: 'FETCH_TODOS', payload: response })
-  
+    const response = await testapi.get('/express_backend')
+   
+    dispatch({ type: 'FETCH_TODOS', payload: response.data })
 }}
+
+
+

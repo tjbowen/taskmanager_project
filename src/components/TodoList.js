@@ -10,7 +10,7 @@ import{ Todo } from '../actions/todos';
 
 
 const TodoList = (props) => {
-  const fetchedData = props.fetchedTodos.data;
+  const fetchedData = props.fetchedTodos;
   console.log('This is fetched data', fetchedData)
   return(
     <div>
@@ -19,9 +19,9 @@ const TodoList = (props) => {
       buttonText = "Add Todo"
       onSubmit ={(todo)=> {props.dispatch(addTodo(todo))}}
       />
-        {/* <div key = {fetchedData.id}>
+        <div key = {fetchedData.id}>
         <ToDoListItem {...fetchedData}/>
-        </div> */}
+        </div>
       {props.todos.map((todo) => (
         <div key = {todo.id}>
         <ToDoListItem {...todo}/>

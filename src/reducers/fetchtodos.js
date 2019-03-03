@@ -1,12 +1,13 @@
-const fetchedTodosDefaultState = {
+
+const initialState = {
         description: "",
-        // dueDate: 155025360000,
-        id: 5,
+        dueDate: null,
+        id: null,
         notes: "",
         tags: []
-}
+};
 
-export default (state = fetchedTodosDefaultState, action) => {
+export default (state = initialState, action) => {
     switch (action.type){
         case "FETCH_TODOS":
             return action.payload;
