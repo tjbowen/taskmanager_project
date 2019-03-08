@@ -3,16 +3,16 @@
 const filtersReducerDefaultState = {
   text: '',
   note: '',
-  dueDate: undefined,
-  createDate: undefined,
-  ascending: true,
+  sortBy: '',
+  ascending: 1,
   startDate: undefined,
   endDate: undefined,
-  tags: []
+  selectedTags: []
 }
 
 export default (state = filtersReducerDefaultState, action) => {
   switch(action.type){
+    /*
     case 'SET_TEXT_FILTER':
       return{
         ...state,
@@ -48,7 +48,12 @@ export default (state = filtersReducerDefaultState, action) => {
       ...state,
       endDate: action.endDate
     }
-
+    */
+    case 'UPDATE_FILTERS':
+      return{
+        ...state,
+        ...action.updates
+      }
     default:
     return{
       ...state

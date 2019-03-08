@@ -4,7 +4,7 @@ export const setTextFilter = (text = "") => ({
   text
 });
 
-export const sortByDate = () => ({ type: 'SORT_BY_DATE' });
+
 
 export const sortByAscending = () => ({ type: 'SORT_BY_ASCENDING' });
 
