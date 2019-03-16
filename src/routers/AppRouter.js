@@ -6,7 +6,7 @@ import TodoList from '../components/TodoList';
 import HelpPage from '../components/Help';
 import NotFoundPage from '../components/NotFoundPage';
 import AddTagPage from '../components/AddTagPage';
-import EditTodoForm  from '../components/EditToDoForm';
+import EditTodoForm  from '../components/EditTodoForm';
 import EditTagPage from '../components/EditTagPage';
 
 const routes = () => (

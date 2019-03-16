@@ -62,7 +62,7 @@ class TodoForm extends React.Component {
         description: this.state.description,
         note: this.state.note,
         dueDate: this.state.dueDate.valueOf(),
-        tags: this.state.selectedTags
+        tags: this.state.selectedTags.map((tag) => tag.id)
       })
       this.setState(() => ({
         description: '',

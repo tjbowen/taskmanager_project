@@ -17,6 +17,8 @@ const jsx = (
   </Provider>
 )
 
+store.dispatch({type: 'SET_TEXT_FILTER', text:"w"});
+
 ReactDOM.render(jsx, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
