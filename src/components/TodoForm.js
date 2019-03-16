@@ -6,6 +6,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import { connect } from 'react-redux';
 import TagPicker from './TagPicker';
 import { fetchTodos } from '../actions/todos';
+import testapi from '../apis/testapi';
 
 
 class TodoForm extends React.Component {
@@ -58,12 +59,24 @@ class TodoForm extends React.Component {
       this.setState(() => ({ errorState: "Please provide a description and due date." }))
     } else {
       this.setState({ errorState: '' });
-      this.props.onSubmit({
+      testapi.post('/express_backend', {
         description: this.state.description,
         note: this.state.note,
         dueDate: this.state.dueDate.valueOf(),
         tags: this.state.selectedTags.map((tag) => tag.id)
       })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error){
+        console.log(error)
+      })
+      // this.props.onSubmit({
+      //   description: this.state.description,
+      //   note: this.state.note,
+      //   dueDate: this.state.dueDate.valueOf(),
+      //   tags: this.state.selectedTags
+      // })
       this.setState(() => ({
         description: '',
         note: '',
